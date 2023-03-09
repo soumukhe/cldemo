@@ -116,7 +116,7 @@ resource "random_id" "randomId" {
 resource "azurerm_storage_account" "smstorageaccount" {
   name                     = "diag${random_id.randomId.hex}"
   resource_group_name      = data.azurerm_resource_group.example.name
-  location                 = "eastus"
+  location                 = var.region
   account_tier             = "Standard"
   account_replication_type = "LRS"
 
